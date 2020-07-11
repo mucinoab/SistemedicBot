@@ -124,6 +124,7 @@ def echo(bot, update):
         update.message.reply_text('No te entendí...\nIntenta de nuevo o usa "/h" para ayuda.')
 
     stderr_fileno.write(f'{time.strftime("%x %H:%M:%S")} {update.message.text} {update.message.from_user.first_name}\n')
+    print(f'{time.strftime("%x %H:%M:%S")} {update.message.text} {update.message.from_user.first_name}')
 
 
 def normaliza(text):
