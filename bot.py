@@ -123,6 +123,8 @@ def echo(bot, update):
     else:
         update.message.reply_text('No te entendí...\nIntenta de nuevo o usa "/h" para ayuda.')
 
+    stderr_fileno.write(f'{time.strftime("%x %H:%M:%S")} {update.message.text} {update.message.from_user.first_name}\n')
+
 
 def normaliza(text):
     return unidecode.unidecode(text.casefold())
@@ -151,6 +153,8 @@ if __name__ == '__main__':
 
     patron_azules = re.compile(r"[Aa]\d{3}\*?")
     patron_interno = re.compile(r"[cC]\S{3}")
+
+    stderr_fileno = sys.stderr
 
     updater = Updater(TOKEN)
     updater.dispatcher.add_handler(MessageHandler(Filters.text, echo))
