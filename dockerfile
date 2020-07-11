@@ -6,4 +6,4 @@ RUN mkdir /app
 ADD . /app
 WORKDIR /app
 
-CMD python /app/bot.py
+CMD python /app/bot.py >> logs
