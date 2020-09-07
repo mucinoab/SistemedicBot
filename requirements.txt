@@ -1,4 +1,4 @@
 python-telegram-bot==12.8
-psycopg2-binary==2.8.5
+psycopg2-binary==2.8.6
 Unidecode==1.1.1
 roman==3.3
